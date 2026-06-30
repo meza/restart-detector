@@ -56,22 +56,6 @@ processResources {
     filesMatching("fabric.mod.json") {
         expand 'mod_version': version, 'target_minecraft': target
     }
-
-    def resultKey = "item"
-
-	resultKey = "id"
-	eachFile { fileCopyDetails ->
-		if (fileCopyDetails.path.startsWith('data/restart_detector/loot_tables')) {
-			fileCopyDetails.path = fileCopyDetails.path.replace('data/restart_detector/loot_tables', 'data/restart_detector/loot_table')
-		}
-
-		if (fileCopyDetails.path.startsWith('data/restart_detector/recipes')) {
-			fileCopyDetails.path = fileCopyDetails.path.replace('data/restart_detector/recipes', 'data/restart_detector/recipe')
-		}
-	}
-	includeEmptyDirs = false
-
-    filesMatching("**/*detector.json") { expand "resultKey": resultKey }
 }
 
 tasks.withType(JavaCompile).configureEach {

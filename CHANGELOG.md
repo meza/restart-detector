@@ -1,1 +1,1 @@
-- Updated to 26.2 and 26.1
+- Updated to 26.2 and 26.1. (Thank you @morgantic!)
